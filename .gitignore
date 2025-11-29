@@ -1,0 +1,7 @@
+TRAINING_SAMPLES/
+venv/
+.env
+Datathon_Probelm_Statement_BFHL.pdf
+pitch Deck
+final_results.json
+inference.py
