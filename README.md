@@ -47,14 +47,10 @@ The engine returns a standardized JSON object containing extracted data, validat
 ```json
 [
     
-    //REQUEST FORMAT
-    
     {
-        "document" : "DOCUMENT_URL" //ANY IMAGE TYPE OR PDF
-    },
+        "document" : "DOCUMENT_URL"
+    }, 
     
-    
-    //RESPONSE FORMAT
     {
         "is_success": true,
         "data": {
