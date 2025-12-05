@@ -45,35 +45,103 @@ Returns universal, standardized data regardless of hospital format (Apollo, Fort
 The engine returns a standardized JSON object containing extracted data, validation results, and fraud signals.
 
 ```json
-{
-  "status": "success",
-  "meta": {
-    "hospital_name": "City General Hospital",
-    "date": "12-10-2023",
-    "currency": "INR"
-  },
-  "line_items": [
+[
+    
+    //REQUEST FORMAT
+    
     {
-      "description": "MRI Brain Scan",
-      "quantity": 1,
-      "unit_rate": 4000.00,
-      "total": 4000.00
+        "document" : "DOCUMENT_URL" //ANY IMAGE TYPE OR PDF
     },
+    
+    
+    //RESPONSE FORMAT
     {
-      "description": "Consultation Fee",
-      "quantity": 1,
-      "unit_rate": 500.00,
-      "total": 500.00
+        "is_success": true,
+        "data": {
+            "pagewise_line_items": [
+                {
+                    "page_no": "1",
+                    "bill_items": [
+                        {
+                            "item_name": "Consultation (Dr. Neo Church Tharsis(Diabetologist, General Medicine))",
+                            "item_amount": 4000.00,
+                            "item_rate": 1000.00,
+                            "item_quantity": 4.00
+                        },
+                        {
+                            "item_name": "RENAL FUNCTION TEST (RFT)",
+                            "item_amount": 240.00,
+                            "item_rate": 240.00,
+                            "item_quantity": 1.00
+                        },
+                        {
+                            "item_name": "ELECTROLYTES",
+                            "item_amount": 450.00,
+                            "item_rate": 450.00,
+                            "item_quantity": 1.00
+                        },
+                        {
+                            "item_name": "URINE COMPLETE ANALYSIS",
+                            "item_amount": 250.00,
+                            "item_rate": 250.00,
+                            "item_quantity": 1.00
+                        },
+                        {
+                            "item_name": "GLUCOSE FASTING (FBS)",
+                            "item_amount": 50.00,
+                            "item_rate": 50.00,
+                            "item_quantity": 1.00
+                        },
+                        {
+                            "item_name": "X-Ray",
+                            "item_amount": 500.00,
+                            "item_rate": 500.00,
+                            "item_quantity": 1.00
+                        },
+                        {
+                            "item_name": "Registration",
+                            "item_amount": 300.00,
+                            "item_rate": 300.00,
+                            "item_quantity": 1.00
+                        },
+                        {
+                            "item_name": "Room Ward Charges",
+                            "item_amount": 6000.00,
+                            "item_rate": 2000.00,
+                            "item_quantity": 3.00
+                        },
+                        {
+                            "item_name": "DMO,(Ward)",
+                            "item_amount": 1500.00,
+                            "item_rate": 500.00,
+                            "item_quantity": 3.00
+                        },
+                        {
+                            "item_name": "Nursing Charge (Ward)",
+                            "item_amount": 1500.00,
+                            "item_rate": 500.00,
+                            "item_quantity": 3.00
+                        },
+                        {
+                            "item_name": "Maintenance Charges",
+                            "item_amount": 600.00,
+                            "item_rate": 200.00,
+                            "item_quantity": 3.00
+                        },
+                        {
+                            "item_name": "Nebulization",
+                            "item_amount": 1000.00,
+                            "item_rate": 100.00,
+                            "item_quantity": 10.00
+                        }
+                    ]
+                }
+            ],
+            "total_item_count": 12,
+            "reconciled_amount": 16390.00
+        }
     }
-  ],
-  "validation": {
-    "calculated_total": 4500.00,
-    "printed_total": 4500.00,
-    "is_match": true
-  },
-  "fraud_analysis": {
-    "tampering_detected": false,
-    "font_consistency_score": 0.99,
-    "flags": []
-  }
-}
+
+    
+]
+
