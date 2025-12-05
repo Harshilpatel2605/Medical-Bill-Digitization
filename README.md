@@ -1,4 +1,4 @@
-# Intelligent Medical Bill Digitization Engine 🏥
+# Medical Bills Digitization
 
 > **An AI-powered auditor that instantly converts unstructured scanned documents into verified, structured data while simultaneously screening for potential fraud.**
 
@@ -6,11 +6,11 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![AI Model](https://img.shields.io/badge/AI-Forensic_Audit-red)
 
-## 📋 Overview
+## Overview
 
 This solution is a specialized API designed to automate the review and digitization of complex medical invoices. Unlike standard OCR tools that simply scrape text, this engine utilizes domain-specific logic to understand the unique structure of medical bills. It acts as an automated auditor, seamlessly processing images and PDFs to extract granular data while performing deep forensic analysis to ensure **Payment Accuracy**.
 
-## 🚀 Key Capabilities
+## Key Capabilities
 
 ### 1. Granular Line-Item Extraction
 The engine moves beyond full-text reading to understand the row-by-row context of a bill.
@@ -18,7 +18,7 @@ The engine moves beyond full-text reading to understand the row-by-row context o
 * **Attribute Mapping:** Isolates `Description`, `Quantity`, `Unit Rate`, and `Total Amount`, filtering out headers, footers, and non-billing metadata.
 * **Multimodal Reading:** Successfully processes mixed-input documents, reading printed computer text and handwritten doctor notes on the same page.
 
-### 2. AI-Native Forensic Fraud Detection 🕵️‍♂️
+### 2. AI-Native Forensic Fraud Detection
 A visual "health check" is performed on the document before data processing to identify tampering.
 * **Font Consistency Analysis:** Scans numerical fields to detect digital forgery (e.g., a '9' in '9000' using a different font style or size than surrounding digits).
 * **Alteration Detection:** Flags visual anomalies such as whitener marks, digital smudges, or handwritten overrides on top of printed totals.
@@ -28,7 +28,7 @@ Ensures financial integrity through real-time arithmetic validation.
 * **Cross-Verification:** Calculates the sum of all extracted line items vs. the printed "Grand Total."
 * **Discrepancy Flagging:** If $\sum (Line Items) \neq Grand Total$, the specific mismatch is flagged to prevent overpayment.
 
-### 4. Intelligent Latency Optimization ⚡
+### 4. Intelligent Latency Optimization
 * **Payload Optimization:** A pre-processing layer analyzes input quality and automatically optimizes document resolution and compression.
 * **High-Volume Ready:** Processes high-resolution mobile scans with the speed of lightweight text files.
 
@@ -40,7 +40,7 @@ Returns universal, standardized data regardless of hospital format (Apollo, Fort
 
 ---
 
-## 💻 API Response Structure
+## API Response Structure
 
 The engine returns a standardized JSON object containing extracted data, validation results, and fraud signals.
 
